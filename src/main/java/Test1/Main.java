@@ -5,10 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class Main {
     public static void main(String[] args) {
 //        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com/");
         driver.manage().window().maximize();
         WebElement input = driver.findElement(By.xpath(" //input[@name='q']"));
@@ -23,8 +26,9 @@ public class Main {
         element.click();
         element = driver.findElement(By.xpath("//ul[@class='catalog-grid ng-star-inserted']/li[1]"));
         element.click();
-        element = driver.findElement(By.xpath("//button [@class='buy-button button button--with-icon" +
-                " button--green button--medium ng-star-inserted']"));
+        element = driver.findElement(By.xpath("//button [@class='simple-slider__control simple-slider__control--next']"));
+        element.click();
+        element = driver.findElement(By.xpath("//button [@class='buy-button button button--with-icon button--green button--medium ng-star-inserted']"));
         element.click();
         driver.quit();
     }
