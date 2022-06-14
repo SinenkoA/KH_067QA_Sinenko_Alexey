@@ -20,7 +20,7 @@ public class Scripts {
         //go to the catalog
         driver.findElement(By.xpath("//button [@id='fat-menu']")).click();
         //select the monitors
-        driver.findElement(By.xpath("//a [@href='https://hard.rozetka.com.ua/monitors/c80089/']")).click();
+        driver.findElement(By.xpath("//a [contains(@href,'monitors/c80089/')]")).click();
         //select the seller "Rozetka"
         driver.findElement(By.xpath("//a [@data-id='Rozetka']")).click();
         //go to the first option as a result of the search
@@ -28,6 +28,7 @@ public class Scripts {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
+
     static void runScript2() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
