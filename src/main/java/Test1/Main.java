@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         //open Google
         driver.get("https://www.google.com/");
